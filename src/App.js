@@ -46,13 +46,15 @@ function App() {
   return (
     <article className="App">
       <h1 className='company-header'>Edelweiss Catalog</h1>
-      <Form 
-        searchCatalog={searchCatalog} 
-        setCatalog={setCatalog} 
-        catalog={catalogData.products}
-      />
-      <div className='book-display'>
-        {books && books}
+      <div className='search-and-display'>
+        <Form 
+          searchCatalog={searchCatalog} 
+          setCatalog={setCatalog} 
+          catalog={catalogData.products}
+        />
+        <div className='book-display'>
+          {books && books}
+        </div>
       </div>
     </article>
   );

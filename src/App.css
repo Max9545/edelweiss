@@ -9,3 +9,7 @@
 .company-header {
   text-align: center;
 }
+
+.search-and-display {
+  display: flex;
+}
