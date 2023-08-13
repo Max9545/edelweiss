@@ -53,6 +53,7 @@ function App() {
           catalog={catalogData.products}
         />
         <div className='book-display'>
+          {catalog.length == 0 && <h3 className='no-books-error'>Nothing Matches Your Searh</h3>}
           {books && books}
         </div>
       </div>
