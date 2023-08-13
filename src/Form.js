@@ -1,13 +1,13 @@
 import './Form.css'
 import { useState } from 'react'
 
-function Form () {
+function Form ({searchCatalog}) {
 
   const [searchTerm, setSearchTerm] = useState('')
 console.log(searchTerm)
   return (
     <section>
-      <form>
+      <form onSubmit={(e) => searchCatalog(searchTerm, e)}>
         <label>Search
           <input
             type='text'

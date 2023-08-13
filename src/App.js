@@ -21,10 +21,31 @@ function App() {
     />
   })
 
+  const searchCatalog = (searchTerm, event) => {
+
+    event.preventDefault()
+
+    const list = []
+
+    catalog.map((book) => {
+
+      if (book.fullName === undefined) {
+        return list
+      } 
+
+      if (book.fullName.includes(searchTerm)) {
+        console.log(book)
+        list.push(book)
+      }
+    })
+
+    setCatalog(list)
+  }
+
   return (
     <article className="App">
       <h1 className='company-header'>Edelweiss Catalog</h1>
-      <Form/>
+      <Form searchCatalog={searchCatalog}/>
       <div className='book-display'>
         {books && books}
       </div>
