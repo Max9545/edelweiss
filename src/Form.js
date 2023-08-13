@@ -14,12 +14,16 @@ function Form ({searchCatalog, setCatalog, catalog}) {
             placeholder='Search Term'
             name='search'
             className='search-input'
+            value={searchTerm}
             onChange={e => setSearchTerm(e.target.value)}
           />
         </label>
         <button className='search-submit'>SUBMIT</button>
       </form>
-      <button className='clear-search' onClick={() => setCatalog(catalog)}>Clear Search</button>
+      <button className='clear-search' onClick={() => {
+        setCatalog(catalog)
+        setSearchTerm('')
+      }}>Clear Search</button>
     </section>
   )
 }
