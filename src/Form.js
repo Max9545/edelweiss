@@ -8,17 +8,18 @@ function Form ({searchCatalog, setCatalog, catalog}) {
   return (
     <section className='search-bar'>
       <form onSubmit={(e) => searchCatalog(searchTerm, e)}>
-        <label>Search
+        <label className='search-label'>Search By Title or Author:
           <input
             type='text'
             placeholder='Search Term'
             name='search'
+            className='search-input'
             onChange={e => setSearchTerm(e.target.value)}
           />
         </label>
-        <button>SUBMIT</button>
+        <button className='search-submit'>SUBMIT</button>
       </form>
-      <button onClick={() => setCatalog(catalog)}>Clear Search</button>
+      <button className='clear-search' onClick={() => setCatalog(catalog)}>Clear Search</button>
     </section>
   )
 }

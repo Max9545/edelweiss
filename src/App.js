@@ -31,11 +31,11 @@ function App() {
 
     catalog.map((book) => {
 
-      if (book.fullName === undefined) {
+      if (book.fullName === undefined || book.author === undefined) {
         return list
       } 
 
-      if (book.fullName.includes(searchTerm)) {
+      if (book.fullName.includes(searchTerm) || book.author.includes(searchTerm)) {
         list.push(book)
       }
     })
@@ -53,7 +53,7 @@ function App() {
           catalog={catalogData.products}
         />
         <div className='book-display'>
-          {catalog.length == 0 && <h3 className='no-books-error'>Nothing Matches Your Searh</h3>}
+          {catalog.length == 0 && <h3 className='no-books-error'>Nothing Matches Your Search</h3>}
           {books && books}
         </div>
       </div>
