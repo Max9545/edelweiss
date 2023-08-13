@@ -1,4 +1,9 @@
 .book-display{
   display: flex;
   flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.company-header {
+  text-align: center;
 }
