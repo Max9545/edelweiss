@@ -1,0 +1,11 @@
+.book{
+  border: 3px solid rgb(228,147,3);
+  width: 20vw;
+  height: 60vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.cover {
+  height: 70%
+}

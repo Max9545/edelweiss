@@ -23,7 +23,7 @@ function App() {
   return (
     <article className="App">
       <h1>Edelweiss Catalog</h1>
-      <div>
+      <div className='book-display'>
         {books && books}
       </div>
     </article>
