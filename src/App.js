@@ -15,6 +15,7 @@ function App() {
             title={book.name}
             author={book.author}
             cover={bookCover}
+            category={book.category}
             key={index}
     />
   })
