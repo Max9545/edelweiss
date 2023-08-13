@@ -2,6 +2,8 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+  background-color: rgb(79,79,79);
+  padding: 2%;
 }
 
 .company-header {
