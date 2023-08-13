@@ -1,11 +1,12 @@
 import React from 'react'
 import './Book.css'
 
-function Book ({title}) {
+function Book ({title, author}) {
 
   return(
     <seaction>
       <p>{`${title}`}</p>
+      <p>{`${author}`}</p>
     </seaction>
   )
 }
