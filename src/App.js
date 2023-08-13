@@ -7,11 +7,12 @@ function App() {
 
   const [catalog, setCatalog] = useState(catalogData.products)
 
-  const books = catalog.map((book) => {
+  const books = catalog.map((book, index) => {
     
     return <Book
             title={book.name}
             author={book.author}
+            key={index}
     />
   })
 
