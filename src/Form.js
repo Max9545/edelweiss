@@ -6,7 +6,7 @@ function Form ({searchCatalog, setCatalog, catalog}) {
   const [searchTerm, setSearchTerm] = useState('')
 
   return (
-    <section>
+    <section className='search-bar'>
       <form onSubmit={(e) => searchCatalog(searchTerm, e)}>
         <label>Search
           <input
