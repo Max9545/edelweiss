@@ -1,24 +1,32 @@
-import logo from './logo.svg';
 import './App.css';
+import { useState } from 'react'
+import catalogData from './CatalogInfo'
+import Book from './Book'
 
 function App() {
+
+  const [catalog, setCatalog] = useState(catalogData.products)
+
+  const books = catalog.map((book, index) => {
+    
+    const bookCover = book.images ? book.images[0].uri : 'No Cover Available'
+
+    return <Book
+            title={book.name}
+            author={book.author}
+            cover={bookCover}
+            category={book.category}
+            key={index}
+    />
+  })
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <article className="App">
+      <h1 className='company-header'>Edelweiss Catalog</h1>
+      <div className='book-display'>
+        {books && books}
+      </div>
+    </article>
   );
 }
 
