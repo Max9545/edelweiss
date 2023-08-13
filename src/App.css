@@ -2,8 +2,21 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+  background-color: rgb(79,79,79);
+  padding: 2%;
+  width: 100%;
+  min-height: 100vh;
 }
 
 .company-header {
   text-align: center;
+}
+
+.search-and-display {
+  display: flex;
+}
+
+.no-books-error {
+  color: white;
+  font-size: 3em
 }

@@ -2,6 +2,7 @@ import './App.css';
 import { useState } from 'react'
 import catalogData from './CatalogInfo'
 import Book from './Book'
+import Form from './Form';
 
 function App() {
 
@@ -20,11 +21,41 @@ function App() {
     />
   })
 
+  const searchCatalog = (searchTerm, event) => {
+
+    // setCatalog(catalogData.products)
+
+    event.preventDefault()
+
+    const list = []
+
+    catalog.map((book) => {
+
+      if (book.fullName === undefined || book.author === undefined) {
+        return list
+      } 
+
+      if (book.fullName.includes(searchTerm) || book.author.includes(searchTerm)) {
+        list.push(book)
+      }
+    })
+
+    setCatalog(list)
+  }
+
   return (
     <article className="App">
       <h1 className='company-header'>Edelweiss Catalog</h1>
-      <div className='book-display'>
-        {books && books}
+      <div className='search-and-display'>
+        <Form 
+          searchCatalog={searchCatalog} 
+          setCatalog={setCatalog} 
+          catalog={catalogData.products}
+        />
+        <div className='book-display'>
+          {catalog.length == 0 && <h3 className='no-books-error'>Nothing Matches Your Search</h3>}
+          {books && books}
+        </div>
       </div>
     </article>
   );
