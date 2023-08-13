@@ -23,6 +23,8 @@ function App() {
 
   const searchCatalog = (searchTerm, event) => {
 
+    // setCatalog(catalogData.products)
+
     event.preventDefault()
 
     const list = []
@@ -34,7 +36,6 @@ function App() {
       } 
 
       if (book.fullName.includes(searchTerm)) {
-        console.log(book)
         list.push(book)
       }
     })
@@ -45,7 +46,11 @@ function App() {
   return (
     <article className="App">
       <h1 className='company-header'>Edelweiss Catalog</h1>
-      <Form searchCatalog={searchCatalog}/>
+      <Form 
+        searchCatalog={searchCatalog} 
+        setCatalog={setCatalog} 
+        catalog={catalogData.products}
+      />
       <div className='book-display'>
         {books && books}
       </div>

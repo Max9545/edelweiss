@@ -1,10 +1,10 @@
 import './Form.css'
 import { useState } from 'react'
 
-function Form ({searchCatalog}) {
+function Form ({searchCatalog, setCatalog, catalog}) {
 
   const [searchTerm, setSearchTerm] = useState('')
-console.log(searchTerm)
+
   return (
     <section>
       <form onSubmit={(e) => searchCatalog(searchTerm, e)}>
@@ -18,6 +18,7 @@ console.log(searchTerm)
         </label>
         <button>SUBMIT</button>
       </form>
+      <button onClick={() => setCatalog(catalog)}>Clear Search</button>
     </section>
   )
 }
