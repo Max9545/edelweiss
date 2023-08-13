@@ -9,9 +9,12 @@ function App() {
 
   const books = catalog.map((book, index) => {
     
+    const bookCover = book.images ? book.images[0].uri : 'No Cover Available'
+
     return <Book
             title={book.name}
             author={book.author}
+            cover={bookCover}
             key={index}
     />
   })
