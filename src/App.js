@@ -2,6 +2,7 @@ import './App.css';
 import { useState } from 'react'
 import catalogData from './CatalogInfo'
 import Book from './Book'
+import Form from './Form';
 
 function App() {
 
@@ -23,6 +24,7 @@ function App() {
   return (
     <article className="App">
       <h1 className='company-header'>Edelweiss Catalog</h1>
+      <Form/>
       <div className='book-display'>
         {books && books}
       </div>
